@@ -1,0 +1,545 @@
+! URxvt
+
+! General settings
+URxvt.saveLines: 2000
+URxvt.scrollBar: False
+URxvt.scrollstyle: rxvt
+URxvt.termName: xterm-256color
+URxvt.urgentOnBell: True
+URxvt.cursorBlink: False
+
+! Extensions
+URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select
+URxvt.urlLauncher: xdg-open
+URxvt.urlButton: 1
+URxvt.underlineURLs: True
+
+URxvt.copyCommand:  xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+
+! Keybindings
+URxvt.keysym.Mod4-c: perl:clipboard:copy
+URxvt.keysym.Mod4-v: perl:clipboard:paste
+URxvt.keysym.Mod4-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-u: perl:url-select:select_next
+
+! Fonts
+
+!Courier
+!URxvt.font: xft:Courier-10
+
+!Inconsolata
+!URxvt.font: xft:Inconsolata-12
+!URxvt.boldFont: xft:Inconsolata-12
+!URxvt.letterSpace: -1
+
+!Inconsolata-g
+!URxvt.font: xft:InconsolataG-10
+!URxvt.letterSpace: -1
+
+!Anonymous Pro
+!URxvt.font: xft:Anonymous\ Pro-12
+!URxvt.letterSpace: -1
+
+!Monaco
+!URxvt.font: xft:Monaco-10
+!URxvt.letterSpace: -1
+
+!Droid Sans Mono
+!URxvt.font: xft:Droid Sans Mono-10
+!URxvt.letterSpace: -1
+
+!DejaVu Sans
+!URxvt.font: xft:DejaVu Sans Mono-10
+!URxvt.letterSpace: -1
+
+!Manospace
+!URxvt.font: xft:Monospace-10
+!URxvt.letterSpace: -1
+
+!Terminus
+!URxvt.font: xft:Terminus-10
+!URxvt.letterSpace: -2
+
+!URxvt.font:     xft:mono:medium:size=10
+
+
+! Tango theme
+
+URxvt.background: #1C1C1C
+URxvt.foreground: #DEDEDE
+
+! black
+URxvt.color0  : #2E3436
+URxvt.color8  : #555753
+! red
+URxvt.color1  : #CC0000
+URxvt.color9  : #EF2929
+! green
+URxvt.color2  : #4E9A06
+URxvt.color10 : #8AE234
+! yellow
+URxvt.color3  : #C4A000
+URxvt.color11 : #FCE94F
+! blue
+URxvt.color4  : #3465A4
+URxvt.color12 : #729FCF
+! magenta
+URxvt.color5  : #75507B
+URxvt.color13 : #AD7FA8
+! cyan
+URxvt.color6  : #06989A
+URxvt.color14 : #34E2E2
+! white
+URxvt.color7  : #D3D7CF
+URxvt.color15 : #EEEEEC
+
+
+
+
+
+
+
+! XTerm
+
+! General settings
+XTerm*termName: xterm-256color
+XTerm*geometry: 80x24
+XTerm*saveLines: 1024
+XTerm*scrollBar: False
+XTerm*loginshell: False
+XTerm*cursorBlink: False
+
+! Fonts and Encoding
+XTerm*utf8: True
+XTerm*locale: True
+XTerm*utf8Title: True
+XTerm*renderFont: True
+XTerm*preeditType: Root
+XTerm*xftAntialias: true
+XTerm*faceName: xft:Inconsolata-12
+
+! Trim trailing spaces
+XTerm*trimSelection: true
+
+! Fix alt-key inputting
+XTerm*eightBitInput: false
+XTerm*metaSendsEscape: true
+
+! Copy and paste with clipboard
+XTerm*translations: #override \
+	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
+! Allow selecting email/url by double-click
+XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+
+! Tango Theme
+
+XTerm*background: #1C1C1C
+XTerm*foreground: #DEDEDE
+
+! black
+XTerm*color0  : #2E3436
+XTerm*color8  : #555753
+! red
+XTerm*color1  : #CC0000
+XTerm*color9  : #EF2929
+! green
+XTerm*color2  : #4E9A06
+XTerm*color10 : #8AE234
+! yellow
+XTerm*color3  : #C4A000
+XTerm*color11 : #FCE94F
+! blue
+XTerm*color4  : #3465A4
+XTerm*color12 : #729FCF
+! magenta
+XTerm*color5  : #75507B
+XTerm*color13 : #AD7FA8
+! cyan
+XTerm*color6  : #06989A
+XTerm*color14 : #34E2E2
+! white
+XTerm*color7  : #D3D7CF
+XTerm*color15 : #EEEEEC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# FontAwesome : https://github.com/FortAwesome/Font-Awesome/releases
+# For the Font Cheatsheet : http://fontawesome.io/cheatsheet/
+# 
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango: System San Francisco Display 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# thin borders
+hide_edge_borders both
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+# set $Terminal i3-sensible-terminal
+# set $Terminal xterm
+set $Terminal "urxvt"
+bindsym $mod+Return exec $Terminal
+
+
+# drag windows
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Shift Focus using Cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+#JKL; were the Alternatives (removed)
+
+# Move focused Window using cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+#JKL; were the Alternatives (removed)
+
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+
+#Workspace Bindings
+set $ws1  "1: Home"
+set $ws2  "2: "
+set $ws3  "3: "
+set $ws4  "4: "
+set $ws5  "5: 5"
+set $ws6  "6: 6"
+set $ws7  "7: 7"
+set $ws8  "8: 8"
+set $ws9  "9: Gimp"
+set $ws10 "10: "
+
+#Assigning Workspace to Applications
+assign [class="Gedit"] $ws3
+assign [class="Firefox"] $ws4
+assign [class="Gimp"] $ws9
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#i3-gaps Bindings
+mode "gaps" {
+        bindsym u gaps inner all minus 2
+        bindsym l gaps outer all minus 2
+        bindsym e gaps inner all plus 2
+        bindsym n gaps outer all plus 2
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"			
+}
+
+bindsym $mod+p mode "resize"
+bindsym $mod+o mode "gaps"
+
+
+
+#Colour Bindings
+#Ashes colors
+#ashes colors
+set $background #faf8f2
+set $foreground #574921
+set $gray       #825c31
+set $primary    #95c7ae
+set $secondary  #aec795
+set $tertiary   #c7ae95
+set $warning    #c79595
+
+set $bg-color 	         		$background
+set $inactive-bg-color   	$gray										##2f343f
+set $text-color          		$background							##f3f4f5
+set $inactive-text-color 	$foreground							##676E7D
+set $urgent-bg-color     	$warning
+
+# window colors
+# colors                			BORDER      BACKGROUND 	TEXT        			INDICATOR
+client.focused          		$primary    	$primary   			$background 		$warning
+client.focused_inactive 	$warning    $warning   			$foreground 		$warning
+client.unfocused        	$warning    $warning   			$background 		$warning
+client.urgent           		$gray       	$gray      				$foreground 		$gray  
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar
+bar {
+    i3bar_command     i3bar  
+ 	#status_command    i3status
+    status_command    i3blocks -c ~/.config/i3blocks/i3blocks.conf
+    position          bottom
+    workspace_buttons yes
+    tray_output none #replaced in favor of custom scripts for the few programs that utilize this (mainly for color matching)
+    #mode hide
+    #hidden_state hide
+    #modifier Mod4
+    #font -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+    font pango: System San Francisco Display, uushi, fontawesome 10
+	colors {
+	    background $background
+        statusline $warning
+        
+	#grayscale colors
+	#set $background 	#161614
+	#set $foreground 	#a0a0a0
+	#set $gray       			#43454a
+	#set $primary    		#90929a
+	#set $secondary  		#a0a08c
+	#set $tertiary   			#a0a089
+	#set $warning    		#ffffff
+
+        # Colors go 				<border> 		<background> 	<text> 				<indicator>
+        focused_workspace 	$primary 		$primary 			$foreground
+        active_workspace 		$background 	$background 		$warning
+        inactive_workspace 	$background 	$background 		$warning
+        urgent_workspace 		$warning 		$warning 			$primary
+    }
+}
+
+
+# Program launcher
+
+# Dmenu
+#bindsym $mod+r exec i3-dmenu-desktop  #-nb "#161614" -nf "#a0a089" -sb "#a0a08c" -sf "#161614"
+#bindsym $mod+r exec i3-dmenu-desktop --dmenu='dmenu -i  -nb "#161614" -nf "#a0a089" -sb "#a0a08c" -sf "#161614" -h 17 -w 1000 -h 38 -x 183 -y 300
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+
+#Rofi
+bindsym $mod+r exec rofi -show run -lines 15 -location 1 width 100 -opacity "85" -bw 0 -bc "#a0a089" -bg "#a0a089" -fg "#161614" -hlbg "#161614" -hlfg "#9575cd" -font "System San Francisco Display 18"
+#bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+
+
+#removes window titles
+for_window [class=".*"] border pixel 4
+gaps inner 10
+gaps outer 1
+
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+
+#Application Execs
+exec_always xrandr --output VGA-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
+exec_always xrdb ~/.Xresources
+exec_always feh --bg-scale /home/slck_cdr/Pictures/Wallpaper/Yosmite.png
+#exec --no-startup-id compton -f
+
+
+
+exec ps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+command=$SCRIPT_DIR/$BLOCK_NAME
+color=#574921
+
+[song]
+command=xprop -name "Spotify Premium - Linux Preview" _NET_WM_ICON_NAME|\cut -d "\"" -f 2|cut -b 11-
+label=
+interval=1
+color=#F0F0F0
+
+[openvpn]
+command=/home/slck_cdr/.config/i3blocks/scripts/openvpn
+interval=1
+label=
+
+[load]
+command=/home/slck_cdr/.config/i3blocks/scripts/load_average
+interval=1
+label=
+
+[disk]
+command=/home/slck_cdr/.config/i3blocks/scripts/disk
+interval=1
+label=
+
+[volume]
+command=/home/slck_cdr/.config/i3blocks/scripts/volume 2
+label= 
+interval=1
+
+[date]
+command=date '+%b %d %H:%M'
+interval=1
+label=
+
+
+
+
+
+
+
+
+
+
+
+exec i3
+exec xrdb ~/.Xresources
+xset +fp ~/.fonts/
